@@ -18,10 +18,11 @@ use App\Http\Controllers\ECGAGroupPollController;
 |
 */
 
+Route::controller(ECGAGroupPollController::class)->group(function () {
+    Route::get('/ga-a-group/results', 'results');
+});
+
 Route::middleware('auth:api')->group(function () {
-    Route::controller(ECGAGroupPollController::class)->group(function () {
-        Route::get('/ga-a-group/results', 'results');
-    });
     Route::controller(ROPController::class)->group(function () {
         Route::post('/rop/results', 'results');
     });

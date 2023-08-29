@@ -98,9 +98,13 @@ class ECGAGroupPollController extends Controller
     {
         $agree = GAGroupPollResults::where('is_agree', true)->count();
         $disagree = GAGroupPollResults::where('is_agree', false)->count();
+        $voted = GAGroupPoll::where('is_voted', true)->count();
+        $notVoted = GAGroupPoll::where('is_voted', false)->count();
         return response()->json([
             'agree' => $agree,
             'disagree' => $disagree,
+            'voted' => $voted,
+            'not_voted' => $notVoted
         ], 200);
     }
 }
