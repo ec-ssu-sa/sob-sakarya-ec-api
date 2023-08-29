@@ -14,8 +14,8 @@ class ECGAGroupPollController extends Controller
     {
         try {
             $currentDate = Carbon::now();
-            $startDate = Carbon::create(2023, 8, 28, 21, 0, 0);
-            $endDate = Carbon::create(2023, 8, 29, 0, 0, 0);
+            $startDate = Carbon::create(2023, 8, 29, 10, 0, 0);
+            $endDate = Carbon::create(2023, 8, 29, 16, 0, 0);
             if (!$currentDate->between($startDate, $endDate)) {
                 return response()->json([
                     'status' => 'error',
@@ -67,8 +67,8 @@ class ECGAGroupPollController extends Controller
     {
         try {
             $currentDate = Carbon::now();
-            $startDate = Carbon::create(2023, 8, 28, 21, 0, 0);
-            $endDate = Carbon::create(2023, 8, 29, 0, 0, 0);
+            $startDate = Carbon::create(2023, 8, 29, 10, 0, 0);
+            $endDate = Carbon::create(2023, 8, 29, 16, 0, 0);
             if (!$currentDate->between($startDate, $endDate)) {
                 return response()->json([
                     'status' => 'error',
